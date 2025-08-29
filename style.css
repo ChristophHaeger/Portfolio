@@ -1,0 +1,832 @@
+@import url('nippo.css');
+/* ==================================== */
+
+:root{
+    /* Color variables */  
+    --bg-dark: hsl(336 0% 1%);
+    --bg: hsl(330 0% 4%);
+    --bg-light: hsl(0 0% 9%);
+    --bg-lighter: hsl(0 0% 14%);
+    --text: hsl(0 0% 95%);
+    --text-muted: hsl(300 0% 69%);
+    --button-text: hsl(0 0% 95%);
+    --highlight: hsl(330 0% 39%);
+    --border: hsl(0 0% 28%);
+    --border-muted: hsl(300 0% 18%);
+    --primary: #764ba2;
+    --secondary: hsl(85 35% 60%);
+    --primary_grad:linear-gradient(106.35deg, #667eea 0%, #764ba2 100%);
+    --danger: hsl(9 26% 64%);
+    --warning: hsl(52 19% 57%);
+    --success: hsl(146 17% 59%);
+    --info: hsl(217 28% 65%);
+
+    /*Font variables*/
+    --base-font-size: 16px;
+    --scale-ratio: 1.25;
+    --font-family: nippo, sans-serif;
+    --h1-size: 64px;
+    --h1-line-height: 110%;
+    --h1-letter-spacing: -2%;
+    --h2-size: 51px;
+    --h2-line-height: 110%;
+    --h2-letter-spacing: -2%;
+    --h3-size: 41px;
+    --h3-line-height: 110%;
+    --h3-letter-spacing: -2%;
+    --h4-size: 33px;
+    --h4-line-height: 130%;
+    --h4-letter-spacing: -2%;
+    --h5-size: 26px;
+    --h5-line-height: 130%;
+    --h5-letter-spacing: -1.5%;
+    --h6-size: 23px;
+    --h6-line-height: 130%;
+    --h6-letter-spacing: -0.5%;
+    --body-lg-size: 22px;
+    --body-lg-line-height: 130%;
+    --body-lg-letter-spacing: -0.5%;
+    --body-size: 16px;
+    --body-line-height: 150%;
+    --body-letter-spacing: 0.5%;
+    --link-size: 20px;
+    --link-line-height: 150%;
+    --link-letter-spacing: -0.5%;
+    --caption-size: 19px;
+    --caption-line-height: 150%;
+    --caption-letter-spacing: 0%;
+
+    --Font_Button-size: 24px;
+    --Font_Button-family: "nippo", sans-serif;
+    --Font_Button-weight: 400;
+
+    --Font_ButtonIcon-size: 24px;
+    --Font_ButtonIcon-family: "Font Awesome 6 Pro", sans-serif;
+    --Font_ButtonIcon-weight: 400;
+
+    --Font_Icon-size: 32px;
+    --Font_Icon-family: "Font Awesome 6 Pro";
+    --Font_Icon-weight: 400;
+
+    --Font_IconBrand-size: 32px;
+    --Font_IconBrand-family: "Font Awesome 6 Brands", sans-serif;
+    --Font_IconBrand-weight: 400;
+}
+
+
+/* ==================================== */
+
+/*basic styles*/
+.h1 {
+  font-family: var(--font-family);
+  font-size: var(--h1-size);
+  line-height: var(--h1-line-height);
+  letter-spacing: var(--h1-letter-spacing);
+  color: var(--text);
+  margin: 0;
+}
+
+@media (max-width: 600px) {
+.h1 {  
+    font-size: var(--h3-size);
+    line-height: var(--h1-line-height);
+    letter-spacing: var(--h1-letter-spacing);
+    color: var(--text);
+    margin: 0;
+  }
+}
+
+.h2 {
+  font-family: var(--font-family);
+  font-size: var(--h2-size);
+  line-height: var(--h2-line-height);
+  letter-spacing: var(--h2-letter-spacing);
+  color: var(--text);
+  margin: 0;
+}
+
+.h3 {
+  font-family: var(--font-family);
+  font-size: var(--h3-size);
+  line-height: var(--h3-line-height);
+  letter-spacing: var(--h3-letter-spacing);
+  color: var(--text);
+  margin: 0;
+}
+
+.h4 {
+  font-family: var(--font-family);
+  font-size: var(--h4-size);
+  line-height: var(--h4-line-height);
+  letter-spacing: var(--h4-letter-spacing);
+  color: var(--text);
+  margin: 0;
+}
+
+.h5 {
+  font-family: var(--font-family);
+  font-size: var(--h5-size);
+  line-height: var(--h5-line-height);
+  letter-spacing: var(--h5-letter-spacing);
+  color: var(--text);
+  margin: 0;
+}
+
+.h6 {
+  font-family: var(--font-family);
+  font-size: var(--h6-size);
+  line-height: var(--h6-line-height);
+  letter-spacing: var(--h6-letter-spacing);
+  color: var(--text);
+  margin: 0;
+}
+
+.body-lg {
+  font-family: var(--font-family);
+  font-size: var(--body-lg-size);
+  line-height: var(--body-lg-line-height);
+  letter-spacing: var(--body-lg-letter-spacing);
+  color: var(--text);
+}
+
+.body-lg-muted {
+  font-family: var(--font-family);
+  font-size: var(--body-lg-size);
+  line-height: var(--body-lg-line-height);
+  letter-spacing: var(--body-lg-letter-spacing);
+  color: var(--text-muted);
+}
+
+.body {
+  font-family: var(--font-family);
+  font-size: var(--body-size);
+  line-height: var(--body-line-height);
+  letter-spacing: var(--body-letter-spacing);
+  color: var(--text-muted);
+  text-align: left;
+}
+
+.link {
+  font-family: var(--font-family);
+  font-size: var(--link-size);
+  line-height: var(--link-line-height);
+  letter-spacing: var(--link-letter-spacing);
+  color: var(--primary);
+}
+
+.caption {
+  font-family: var(--font-family);
+  font-size: var(--caption-size);
+  line-height: var(--caption-line-height);
+  letter-spacing: var(--caption-letter-spacing);
+  color: var(--text);
+}
+
+/* ==================================== */
+
+/* Animation keyframes */
+@keyframes slideInLeftFade {
+  0% {
+    opacity: 0;
+    transform: translateX(-80px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+}@keyframes slideInBottomFade {
+  0% {
+    opacity: 0;
+    transform: translateY(80px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes backgroundAnimationStart {
+  0% {
+    filter:  brightness(0.2) saturate(0);
+  }
+  100% {
+    filter:  brightness(0.5) saturate(1) contrast(1);
+  }
+  
+}@keyframes backgroundAnimationLoop { 
+  /* Hier beginnt der Loop zwischen State 2 und 3 */
+  /* 50%: State 3 (hell) */
+  0% {
+    filter:  brightness(0.5) saturate(1) contrast(1);
+  }
+  
+  /* 75%: Zurück zu State 2 */
+  50% {
+    filter: brightness(0.7) saturate(1) contrast(1);
+  }
+  
+  /* 100%: State 3 (für nahtlosen Loop) */
+  100% {
+    filter:  brightness(0.5) saturate(1) contrast(1);
+  }
+}
+
+/* Fade animation for scroll down */
+@keyframes fade {
+  0%, 100% { opacity: 0; }
+  50% { opacity: 1; }
+}
+
+@keyframes slide-in-from-left {
+  to {transform-origin: left; transform: scaleX(1);}
+}
+
+@keyframes slide-in-from-right {
+  to {transform-origin: right; transform: scaleX(1);}
+}
+
+/* ==================================== */
+
+/* Global Styles */
+html, body {
+  height: 100dvh;
+  width: 100dvw;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE 10+ */
+}
+
+/* Hide scrollbar for all browsers */
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+.titleAndLine {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px; /* Add gap for spacing between title and line */
+}
+
+@media (max-width: 800px) {
+  .titleAndLine {
+    align-items: center; /* Center align on smaller screens */
+    text-align: center; /* Center text on smaller screens */
+    width: 80%; /* Ensure it takes full width */
+    flex-shrink: 1;
+  }
+  
+}
+
+.Line {
+  width: 100%;
+  height: 4px;
+  background: var(--primary);
+}
+
+/*@media(prefers-reduced-motion: no-preference){
+  .Line{
+    transform-origin: left; transform: scaleX(0);
+    animation: slide-in-from-left linear forwards;
+    animation-timeline: view();
+    animation-range: 0px 300px;
+  }
+}*/
+
+.Button {
+  display: flex;
+  padding: 16px 16px;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 8px;
+  border-radius: 8px;
+  border: none;
+  background: var(--primary);
+  cursor: pointer;
+  text-decoration: none;
+  color: var(--text);
+}
+
+/* Button/Hover */
+.Button:hover {
+  color: var(--text-muted);
+  box-shadow: inset 0 0 0 2px var(--text-muted);
+}
+
+
+.ButtonIcon {
+  color: inherit;
+  font-family: var(--Font_ButtonIcon-family);
+  font-size: var(--Font_ButtonIcon-size);
+  font-style: normal;
+  font-weight: var(--Font_ButtonIcon-weight);
+  line-height: 100%;
+}
+
+.ButtonText {
+  color: inherit;
+  font-family: var(--Font_Button-family);
+  font-size: var(--Font_Button-size);
+  font-style: normal;
+  font-weight: var(--Font_Button-weight);
+  line-height: 100%;
+}
+
+.section {
+    display: flex;
+    width: 100dvw;
+    min-height: 100dvh;
+    height: auto;
+    padding: 0 clamp(16px, 8dvw, 128px);
+    flex-direction: column;
+    justify-content: center; /* Vertikal zentriert */
+    align-items: flex-start; /* Links ausgerichtet */
+    gap: 16px;
+    background: var(--bg-dark);
+}
+
+@media (max-width: 800px) {
+  .section {
+    height: auto;
+    padding: 16px 16px;
+  }
+}
+
+/* ==================================== */
+
+/* Navbar*/
+.navbar {
+  display: flex;
+  width: 100%;
+  min-width: 440px;
+  min-height: 64px;
+  padding: 8px 32px;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 16px;
+  background: var(--bg);
+  border-radius: 0px;
+  box-shadow: 0 4px 8px var(--bg-dark);
+  margin: 0 auto;
+  margin-top: 0;
+  box-sizing: border-box;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  backdrop-filter: blur(8px);
+}
+
+@media (max-width: 500px) {
+  .navbar {
+    padding: 4px 4px;
+  }
+}
+
+/* Icon container styles */
+.navbar_IconContainer {
+  display: flex;
+  padding: 4px;
+  align-items: flex-start;
+  gap: 4px;
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+/* SVG styles */
+.navbar_IconSVG {
+  width: 62px;
+  height: 38px;
+  display: block;
+}
+
+/* Button container styles */
+.navbar_ButtonContainer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex: 1 0 0;
+  gap: 16px;
+}
+
+
+/* Button styles */
+.navbar_Button {
+  display: flex;
+  height: 40px;
+  padding: 4px 8px;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  background: none;
+  border: 1px solid var(--bg);
+  color: var(--text);
+}
+
+
+.navbar_Button:hover {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text-muted);
+}
+
+.navbar_Button:active {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--primary);
+}
+
+/* Button text styles */
+.navbar_ButtonText {
+  color: inherit;
+  text-align: center;
+  font-family: var(--font-family);
+  font-size: var(--base-font-size);
+  font-style: normal;
+  font-weight: normal;
+  line-height: normal;
+}
+
+@media (max-width: 500px) {
+  .navbar_ButtonText {
+    font-size: 12px;
+  }
+}
+
+/* ==================================== */
+
+/*Landing Page Sektion*/
+.landingPage {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  box-shadow: 0 -128px 64px 0 var(--bg-dark) inset;
+  text-align: center;
+}
+
+.background-container {
+  position: absolute;
+  top: 60px; left: 0; right: 0; bottom: 0;
+  background-image: url('Images/Bild4.jpg');
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+  filter: brightness(0.2) saturate(0);
+  animation: backgroundAnimationStart 5s forwards;
+}
+
+/* Container für Title + Subtitle in der Landing Page */
+.landingPage_Title_Subtitle_Container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  padding: 16px;
+  max-width: 1200px;
+  width: 100%;
+}
+
+/* Container für die einzelnen Titel-Items (Icon + Text) */
+.landingPage_Title_Container {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap; /* bei kleinen Bildschirmen umbrüche erlauben */
+}
+
+@media (max-width: 800px) {
+  .landingPage_Title_Container {
+    flex-direction: column; /* alle Paare untereinander */
+    align-items: center;
+  }
+}
+
+/* Einzelner Titel-Item (Icon + Text) */
+.landingPage_Title_Item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* SVG-Bilder (die Schrift) */
+.landingPage_LetterSVG {
+  height: 80px;
+  width: auto;
+  display: inline-block;
+  vertical-align: middle;
+  flex-shrink: 0;
+  animation: slideInBottomFade 2s ease 0.1s forwards;
+}
+
+
+/* Text im Titel (z.B. "hristoph") */
+.landingPage_title {
+  font-family: 'nippo', sans-serif;
+  font-size: 96px;
+  font-weight: 400;
+  color: var(--text);
+  line-height: 1;
+  animation: slideInBottomFade 2s ease 0.1s forwards;
+}
+
+
+/* Untertitel (z.B. "Developer and Designer") */
+.landingPage_Subtitle {
+  font-family: 'nippo', sans-serif;
+  font-size: 32px;
+  font-weight: 400;
+  color: var(--text); 
+  max-width: 600px;
+  margin: 0 auto;
+  animation-delay: 5s;
+  animation: slideInBottomFade 2s ease 0.1s forwards;
+}
+
+
+
+/* Scroll-Hinweis (nur Text und Icon) */
+.landingPage_ScrollDown {
+  opacity: 0;
+  position: absolute;
+  bottom: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  z-index: 2;
+  /* Animation für Blickfang */
+  animation: fade 3s ease-in-out infinite;
+  animation-delay: 4s;
+}
+
+/* Icon im Scroll-Hinweis */
+.landingPage_ScrollDownIcon {
+  font-family: "Font Awesome 6 Pro"; /* Icon Font */
+  font-size: 24px;
+  color: var(--text);
+}
+
+/* Text im Scroll-Hinweis */
+.landingPage_ScrollDownText {
+  font-family: 'nippo', sans-serif;
+  font-size: 16px;
+  color: var(--text);
+}
+
+
+/* ==================================== */
+
+/*ÜberMich Section*/
+
+.ueberMich_Text{
+ max-width: 1000px;
+ width: 80%; /* Damit der Container sich an die Bildschirmgröße anpasst */
+}
+
+/* ==================================== */
+
+/* MeineKernkompetenzen Section */
+
+.kernkompetenzen_Card_Container {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: row;
+  gap: 16px;
+  padding: 0;
+}
+
+@media (max-width: 1000px) {
+  .kernkompetenzen_Card_Container {
+    display: flex;
+    gap: 16px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+.kernkompetenzen_Card_Container2 {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: row;
+  gap: 16px;
+  padding: 0;
+}
+
+@media (max-width: 600px) {
+  .kernkompetenzen_Card_Container2 {
+    display: flex;
+    gap: 16px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+.kernkompetenzen_Card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  height: 240px;
+  width: 320px;
+  border-bottom: 2px solid var(--primary);
+  padding: 0;
+}
+
+.kernkompetenzen_Card_IconContainer {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: var(--primary_grad);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.kernkompetenzen_Card_Icon {
+  font-size: var(--Font_Icon-size);
+  font-family: var(--Font_Icon-family);
+  font-weight: var(--Font_Icon-weight);
+  color: var(--text);
+}
+
+.kernkompetenzen_CardText {
+  font-size: var(--Font_CardText-size);
+  font-family: var(--Font_CardText-family);
+  font-weight: var(--Font_CardText-weight);
+  color: var(--Text_SmallText2);
+  text-align: center;
+}
+
+/* ========================= */
+
+.meinWerdegang_BildTextContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+@media (max-width: 1000px) {
+  .meinWerdegang_BildTextContainer {
+    display: flex;
+    gap: 16px;
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+.meinWerdegang_Bild {
+  display: flex;
+  align-items: center;
+}
+.img {
+  height: 400px; /* passt sich der Containerhöhe an */
+  width: auto;
+  object-fit: contain;
+}
+
+@media (max-width: 800px) {
+  .meinWerdegang_Bild {
+    width: 50%; /* Bild nimmt die volle Breite des Containers ein */
+    height: auto; /* Höhe passt sich automatisch an */
+  }
+  
+}
+
+
+.meinWerdegang_TextButtonContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.meinWerdegang_Text{
+    max-width: 800px;
+    width: 80%; /* Damit der Container sich an die Bildschirmgröße anpasst */
+}
+
+/* ========================= */
+
+
+/* Meine Projekte Section */
+
+.meineProjekte_CardContainer{
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 16px;
+  width: 100%;
+  flex-shrink: 0;
+}
+
+@media (max-width: 1050px) {
+  .meineProjekte_CardContainer {
+    flex-direction: column;
+  }
+}
+
+.meineProjekte_Card{
+  background-color: var(--bg-light);
+  padding: 16px; /*TO:DO*/
+  display: flex;
+  width: 350px;
+  height: 450px;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 16px;
+  border-radius: 16px;
+  flex-shrink: 0;
+}
+
+/*.meineProjekte_Card:hover {
+  background-color: var(--bg-lighter);
+  cursor: pointer
+}*/
+
+.meineProjekte_Card_IMGContainer{
+  border-radius: 16px;
+  width: 100%; 
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+}
+
+.meineProjekte_LabelsContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.meineProjekte_Label {
+  display: flex;
+  border: 1px solid var(--border, #667EEA);
+  border-radius: 4px;
+  padding: 2px 4px;
+}
+
+/* ========================= */
+
+
+/*Footer*/
+.footer{
+  width: 100%;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 0;
+  background-color: #191919;
+}
+
+.footer_Container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+}
+
+.footer_Item{
+    width: 100px;
+    height: 100px;
+    display: flex;
+    gap: 8px;
+    text-decoration: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    border-bottom: 2px solid var(--primary, #667EEA);
+}
+
+.footer_Item:hover{
+  background-color: var(--primary);
+  border-radius: 8px;
+}
+
+.footer_ItemIcon {
+  font-size: var(--Font_Icon-size);
+  color: var(--text);
+}
+
+.footer_ItemBrandIcon {
+  font-size: var(--Font_IconBrand-size);
+  font-family: var(--Font_IconBrand-family);
+  font-weight: var(--Font_IconBrand-weight);
+  color: var(--text);
+}
