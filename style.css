@@ -425,20 +425,18 @@ body::-webkit-scrollbar {
   align-items: center;
   text-decoration: none;
   background: none;
-  border: 1px solid var(--bg);
+  border-bottom: 1px solid var(--border-muted);
   color: var(--text);
 }
 
 
 .navbar_Button:hover {
-  border: 1px solid var(--border);
-  border-radius: 8px;
+  border-bottom: 1px solid var(--border);
   color: var(--text-muted);
 }
 
 .navbar_Button:active {
-  border: 1px solid var(--border);
-  border-radius: 8px;
+  border-bottom: 1px solid var(--border);
   color: var(--primary);
 }
 
@@ -785,7 +783,7 @@ body::-webkit-scrollbar {
 /*Footer*/
 .footer{
   width: 100%;
-  height: 200px;
+  height: 100px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -804,29 +802,35 @@ body::-webkit-scrollbar {
 
 .footer_Item{
     width: 100px;
-    height: 100px;
+    height: 60px;
     display: flex;
     gap: 8px;
     text-decoration: none;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-end;
-    border-bottom: 2px solid var(--primary, #667EEA);
+    justify-content: center;
+    border-bottom: 1px solid var(--border-muted);
+    color: var(--text);
 }
 
 .footer_Item:hover{
-  background-color: var(--primary);
-  border-radius: 8px;
+  border-bottom: 1px solid var(--border);
+  color: var(--text-muted);
+}
+
+.footer_Item:active{
+  border-bottom: 1px solid var(--border);
+  color: var(--primary);
 }
 
 .footer_ItemIcon {
   font-size: var(--Font_Icon-size);
-  color: var(--text);
+  color: inherit;
 }
 
 .footer_ItemBrandIcon {
   font-size: var(--Font_IconBrand-size);
   font-family: var(--Font_IconBrand-family);
   font-weight: var(--Font_IconBrand-weight);
-  color: var(--text);
+  color: inherit;
 }
