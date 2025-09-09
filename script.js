@@ -27,3 +27,29 @@ window.addEventListener('load', () => {
 
 const menuToggle = document.getElementById('menuToggle');
 const navMenu = document.getElementById('navMenu');
+
+
+const card = document.getElementById('bachelorArbeit');
+const slider = document.querySelector('.slider');
+const sliderBG = document.querySelector('.slider-bg');
+const bg = document.querySelector('.background-An');
+
+card.addEventListener('mouseenter', () => {
+  // Entferne kurzzeitig die Klasse, um die Animation neu zu starten
+  slider.classList.remove('animate');
+
+
+  // Trigger reflow, um den Neustart der Animation zu erzwingen
+  void slider.offsetWidth;
+
+  // Füge die Klasse wieder hinzu, um die Animation zu starten
+  slider.classList.add('animate');
+  sliderBG.classList.add('animate');
+
+});
+
+card.addEventListener('mouseleave', () => {
+  slider.classList.remove('animate');
+  sliderBG.classList.remove('animate');
+
+});
