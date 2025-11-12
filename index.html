@@ -55,6 +55,9 @@
                 <span class="ButtonIcon">envelope</span>
                 <span class="ButtonText">Schreib mir</span>
             </button>
+            <div class="ueberMich_BildContainer">
+                <img src="Images/MTT.png" width="500" height="350" alt="MultitouchtischBild">
+            </div>
         </section>
 
         <section id="kernkompetenzen" class="section">
@@ -131,7 +134,7 @@
                 <div class="Line"></div>
             </div>
             <div class="meineProjekte_CardContainer">
-                <div class="meineProjekte_Card">
+                <div class="meineProjekte_Card" data-video-src="vids/HCI-Goethe-Leben und Reisen.mp4">
                     <div class="meineProjekte_Card_IMGContainer" style="background-image: url('Images/GoetheRad1.jpg');"></div>
                     <span class="caption">Goethe - <br> Reisen und Leben</span>
                     <p class="body">Eine intuitive Anwendung zur Darstellung des Zeitstrahls von Goethe, seinen Lebenswerken und Reisen</p>
@@ -142,7 +145,7 @@
                     </div>
                 </div>
 
-                <div class="meineProjekte_Card">
+                <div class="meineProjekte_Card" data-video-src="vids/MTT-AR-Vid.mp4">
                     <div class="meineProjekte_Card_IMGContainer" style="background-image: url('Images/3.jpg');"></div>
                     <span class="caption">Bachelor Arbeit  - <br> Kunst der Platzierung</span>
                     <p class="body">Forschungsarbeit über die Platzierung von UI-Elementen in einem MR-Setup mit mehreren Personen</p>
@@ -154,7 +157,7 @@
                     </div>
                 </div>
 
-                <div class="meineProjekte_Card">
+                <div class="meineProjekte_Card" data-gallery-images="Images/Website.PNG, Images/Website-Figma.png">
                     <div class="meineProjekte_Card_IMGContainer" style="background-image: url('Images/Website.PNG');"></div>
                     <span class="caption">Website - <br> Design und Umsetzung</span>
                     <p class="body">Diese Website, designt mit Figma und umgesetzt mit HTML, CSS, Javascript und Githubpages</p>
@@ -166,22 +169,30 @@
                 </div>
             </div>
         </section>
+    </div>
+
+        <div id="projektOverlay" class="projekt-overlay">
+            <span class="close-button">&times;</span> 
+            <h2 id="overlay-title"></h2>
+            <div id="overlay-dynamic-content"></div>    
+            <div id="overlay-labels-container"></div>
+        </div>
 
     </main>
 
     <footer class="footer">
         <span class="caption">Kontakt</span>
         <div class="footer_Container">
-    <a href="mailto:haegerchristoph@gmail.com" alt="Email" class="footer_Item">
-        <i class="fa-solid fa-envelope footer_ItemIcon"></i>
-    </a>
-    <a href="https://github.com/ChristophHaeger" alt="Github" class="footer_Item">
-        <i class="fa-brands fa-github footer_ItemIcon"></i>
-    </a>
-    <a href="https://www.linkedin.com/in/christoph-haeger-09830135b/" alt="LinkedIn" class="footer_Item">
-        <i class="fa-brands fa-linkedin footer_ItemIcon"></i>
-    </a>
-</div>
+            <a href="mailto:haegerchristoph@gmail.com" alt="Email" class="footer_Item">
+                <i class="fa-solid fa-envelope footer_ItemIcon"></i>
+            </a>
+            <a href="https://github.com/ChristophHaeger" alt="Github" class="footer_Item">
+                <i class="fa-brands fa-github footer_ItemIcon"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/christoph-haeger-09830135b/" alt="LinkedIn" class="footer_Item">
+                <i class="fa-brands fa-linkedin footer_ItemIcon"></i>
+            </a>
+        </div>
     </footer>
 
     <script src="script.js"></script>

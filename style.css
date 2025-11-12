@@ -592,6 +592,21 @@ body::-webkit-scrollbar {
  width: 80%; /* Damit der Container sich an die Bildschirmgröße anpasst */
 }
 
+.ueberMich_BildContainer{
+  display: flex;
+  width: 80%;
+  justify-content: end;
+}
+
+@media (max-width: 1000px) {
+  .ueberMich_BildContainer {
+    justify-content: center;
+    padding-left: 5%;
+  }
+}
+
+
+
 /* ==================================== */
 
 /* MeineKernkompetenzen Section */
@@ -610,6 +625,7 @@ body::-webkit-scrollbar {
     gap: 16px;
     flex-direction: column;
     align-items: flex-start;
+    justify-content: center;
   }
 }
 
@@ -627,6 +643,7 @@ body::-webkit-scrollbar {
     gap: 16px;
     flex-direction: column;
     align-items: flex-start;
+    justify-content: center;
   }
 }
 
@@ -749,11 +766,11 @@ body::-webkit-scrollbar {
   border-radius: 16px;
   flex-shrink: 0;
 }
-
-/*.meineProjekte_Card:hover {
+.meineProjekte_Card:hover {
   background-color: var(--bg-lighter);
   cursor: pointer
-}*/
+}
+
 
 .meineProjekte_Card_IMGContainer{
   border-radius: 16px;
@@ -775,6 +792,223 @@ body::-webkit-scrollbar {
   border: 1px solid var(--border, #667EEA);
   border-radius: 4px;
   padding: 2px 4px;
+}
+
+/* Overlay Styles */
+/* Der Overlay-Container (der dunkle Hintergrund) */
+.overlay-container {
+    display: none; /* Standardmäßig verborgen */
+    position: fixed; /* Bleibt an Ort und Stelle, auch beim Scrollen */
+    z-index: 1000; /* Stellt sicher, dass es über allem anderen liegt */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* Scrollen, falls Inhalt zu groß */
+    background-color: rgba(0, 0, 0, 0.7); /* Halbdurchsichtiger Hintergrund */
+    
+    /* Flexbox zum Zentrieren des Inhalts */
+    justify-content: center;
+    align-items: center;
+}
+
+/* Der eigentliche Inhalts-Block (das weiße Fenster) */
+.overlay-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 30px;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 600px; /* Maximale Breite festlegen */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 0.3s; /* Kleine Animation */
+}
+
+/* Schließen-Button (das 'x' rechts oben) */
+.close-button {
+    color: #aaa;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: #000;
+}
+
+/* Styling für die dynamischen Inhalte im Overlay */
+.overlay-image {
+    width: 100%;
+    height: 250px; /* Höhe des Bildes festlegen */
+    background-size: cover;
+    background-position: center;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+
+
+#overlay-title {
+    margin-top: 0;
+}
+
+
+/* Kleine Fade-In-Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* ========================= */
+
+/* Overlay Styles */
+
+/* Das Overlay-Fenster */
+.projekt-overlay {
+    position: fixed;
+    /* Zentrierung und Größe wie gewünscht */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%; /* Wunschbreite */
+    height: 80%; /* Wunschhöhe */
+    
+    background: rgba(10, 10, 10, 0.9); /* Etwas heller für besseren Kontrast */
+    backdrop-filter: blur(8px);
+    border-radius: 16px; /* Abgerundete Ecken */
+    border: 1px solid var(--border-muted);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+
+    /* Flexbox, um den Inhalt (Titel, Content) zu organisieren */
+    display: none; /* Wird per JS zu 'flex' */
+    flex-direction: column;
+    padding: 24px;
+    align-items: center;
+    box-sizing: border-box; /* Padding wird in Größe eingerechnet */
+    
+    z-index: 1000;
+}
+
+/* Close-Button (neu positioniert für Padding) */
+.close-button {
+    position: absolute;
+    top: 16px;
+    right: 24px;
+    font-size: 36px;
+    color: var(--text-muted);
+    cursor: pointer;
+    line-height: 1;
+    z-index: 1001; /* Über dem Inhalt */
+}
+
+.close-button:hover {
+    color: var(--text);
+}
+
+/* Overlay-Titel (aus deinem HTML) */
+#overlay-title {
+    color: var(--text);
+    font-family: var(--font-family);
+    font-size: var(--h3-size);
+    margin-bottom: 16px; /* Abstand zum Inhalt */
+    flex-shrink: 0; /* Verhindert, dass der Titel schrumpft */
+}
+
+/* Dynamischer Content-Bereich (Video oder Galerie) */
+#overlay-dynamic-content {
+    flex-grow: 1; /* Nimmt den restlichen Platz ein */
+    overflow: hidden; /* Verhindert Scrollen im Container */
+    position: relative; /* Wichtig für Galerie-Positionierung */
+    width: 100%;
+    height: 100%; /* Stellt sicher, dass Höhe genutzt wird */
+}
+
+/* Styling für Videos im Overlay */
+#overlay-dynamic-content video {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Wichtig: Skaliert das Video, damit es hineinpasst */
+    border-radius: 8px;
+}
+
+/* NEU: Styling für die Galerie */
+.gallery-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.gallery-image-wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.gallery-image {
+    display: none; /* Alle Bilder standardmäßig versteckt */
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Skaliert das Bild, damit es hineinpasst */
+    border-radius: 8px;
+    animation: fadeIn 0.3s ease; /* Kleiner Fade-Effekt */
+}
+
+.gallery-image.active {
+    display: block; /* Nur das aktive Bild wird gezeigt */
+}
+
+/* NEU: Galerie-Navigation */
+.gallery-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.4);
+    color: var(--text);
+    border: 1px solid var(--border-muted);
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
+    font-size: 24px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    transition: background 0.2s;
+}
+
+.gallery-nav:hover {
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.gallery-prev {
+    left: 10px;
+}
+
+.gallery-next {
+    right: 10px;
+}
+
+/* Simples FadeIn für die Bilder */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
 /* ========================= */
